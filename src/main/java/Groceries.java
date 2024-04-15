@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Groceries {
     Map<String,List> hash = new HashMap<>();
@@ -21,8 +18,8 @@ public class Groceries {
     }
     public static String[] splitData() throws Exception {
         String output = (new Main()).readRawDataToString();
-        String [] oS = output.split("[##]");
+        String [] oS = output.split("[:, @, ^, *, %, ##]");
         return oS;
-//        String [] sO = oS.toString().split("[\:\;]");
+//        String [] sO = Arrays.toString(oS).split("[a-zA-Z]{4}[:;]+[a-zA_Z]{4,}[:;]+");
     };
 }
